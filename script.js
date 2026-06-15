@@ -13,8 +13,8 @@ async function studentLogin() {
 
     const response =
     await fetch(
-        "https://campus-backend-qpso.onrender.com"
-    );
+    "https://campus-backend-qpso.onrender.com/students"
+     );
 
     const students =
     await response.json();
@@ -72,8 +72,8 @@ async function signup() {
     };
 
     await fetch(
-        "https://campus-backend-qpso.onrender.com",
-        {
+    "https://campus-backend-qpso.onrender.com/students",
+    {
             method: "POST",
 
             headers: {
@@ -168,7 +168,7 @@ async function submitComplaint() {
     };
 
     await fetch(
-        "https://campus-backend-qpso.onrender.com",
+       "https://campus-backend-qpso.onrender.com/complaints",
         {
 
             method:"POST",
@@ -211,9 +211,9 @@ async function loadComplaints() {
     );
 
     const response =
-    await fetch(
-        "https://campus-backend-qpso.onrender.com"
-    );
+await fetch(
+"https://campus-backend-qpso.onrender.com/complaints"
+);
 
     const complaints =
     await response.json();
@@ -254,7 +254,9 @@ async function adminLogin() {
     console.log("Entered Password:", password);
 
     const response =
-    await fetch("https://campus-backend-qpso.onrender.com");
+    await fetch(
+    "https://campus-backend-qpso.onrender.com/admins"
+     );
 
     const admins =
     await response.json();
@@ -288,9 +290,9 @@ async function adminLogin() {
 async function loadAdminComplaints() {
 
     const response =
-    await fetch(
-        "https://campus-backend-qpso.onrender.com"
-    );
+await fetch(
+"https://campus-backend-qpso.onrender.com/complaints"
+);
 
     const complaints =
     await response.json();
