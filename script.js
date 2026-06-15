@@ -446,8 +446,6 @@ async function dashboardStats() {
     ).innerHTML = resolved;
 }
 
-submitComplaint()
-
 dashboardStats();
 
 loadAdminComplaints();
