@@ -13,7 +13,7 @@ async function studentLogin() {
 
     const response =
     await fetch(
-        "http://localhost:3000/students"
+        "https://campus-backend-qpso.onrender.com"
     );
 
     const students =
@@ -72,7 +72,7 @@ async function signup() {
     };
 
     await fetch(
-        "http://localhost:3000/students",
+        "https://campus-backend-qpso.onrender.com",
         {
             method: "POST",
 
@@ -168,7 +168,7 @@ async function submitComplaint() {
     };
 
     await fetch(
-        "http://localhost:3000/complaints",
+        "https://campus-backend-qpso.onrender.com",
         {
 
             method:"POST",
@@ -212,7 +212,7 @@ async function loadComplaints() {
 
     const response =
     await fetch(
-        "http://localhost:3000/complaints"
+        "https://campus-backend-qpso.onrender.com"
     );
 
     const complaints =
@@ -254,7 +254,7 @@ async function adminLogin() {
     console.log("Entered Password:", password);
 
     const response =
-    await fetch("http://localhost:3000/admins");
+    await fetch("https://campus-backend-qpso.onrender.com");
 
     const admins =
     await response.json();
@@ -289,7 +289,7 @@ async function loadAdminComplaints() {
 
     const response =
     await fetch(
-        "http://localhost:3000/complaints"
+        "https://campus-backend-qpso.onrender.com"
     );
 
     const complaints =
@@ -357,7 +357,7 @@ ${c.status}
 async function updateStatus(id, status) {
 
     await fetch(
-        `http://localhost:3000/complaints/${id}`,
+        `https://campus-backend-qpso.onrender.com/complaints/${id}`,
         {
             method: "PATCH",
 
@@ -404,7 +404,7 @@ async function dashboardStats() {
 
     const response =
     await fetch(
-    "http://localhost:3000/complaints"
+    "https://campus-backend-qpso.onrender.com/complaints"
     );
 
     const complaints =
@@ -490,7 +490,7 @@ async function loadNotifications(){
 
     const response =
     await fetch(
-    "http://localhost:3000/notifications"
+    "https://campus-backend-qpso.onrender.com/notifications"
     );
 
     const notifications =
@@ -530,7 +530,7 @@ async function deleteComplaint(id){
     try{
 
         const response = await fetch(
-            `http://localhost:3000/complaints/${id}`,
+            `https://campus-backend-qpso.onrender.com/complaints/${id}`,
             {
                 method: "DELETE"
             }
@@ -566,7 +566,7 @@ async function dashboardStats(){
 
     const response =
     await fetch(
-    "http://localhost:3000/complaints"
+    "https://campus-backend-qpso.onrender.com/complaints"
     );
 
     const complaints =
@@ -621,7 +621,7 @@ async function loadNotifications(){
 
     const response =
     await fetch(
-    "http://localhost:3000/notifications"
+    "https://campus-backend-qpso.onrender.com/notifications"
     );
 
     const notifications =
