@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<div class="navbar">
+
+    <h2>
+        🏫 Campus Complaint Management
+    </h2>
+
+<div class="welcome-card">
+
+    <h2>
+        Welcome Admin
+    </h2>
+
+    <p>
+        Manage and monitor all campus complaints.
+    </p>
+
+</div>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+
+</div>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="admin-dashboard">
+ 
+<h1>Admin Dashboard</h1>
+
+<div class="stats">
+    <h3>Total Complaints</h3>
+    <span id="totalComplaints">0</span>
+</div>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search Complaint"
+onkeyup="searchComplaint()">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Complaint</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="adminComplaints">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    loadAdminComplaints();
+    dashboardStats();
+</script>
+
+<div class="stats-container">
+
+    <div class="stats">
+        <h3>Total</h3>
+        <span id="totalComplaints">0</span>
+    </div>
+
+    <div class="stats">
+        <h3>Pending</h3>
+        <span id="pendingComplaints">0</span>
+    </div>
+
+    <div class="stats">
+        <h3>In Progress</h3>
+        <span id="progressComplaints">0</span>
+    </div>
+
+    <div class="stats">
+        <h3>Resolved</h3>
+        <span id="resolvedComplaints">0</span>
+    </div>
+
+</div>
+
+<script>
+
+loadAdminComplaints();
+dashboardStats();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<div class="navbar">
+
+    <h2>
+        🏫 Campus Complaint Management
+    </h2>
+
+    <button onclick="logout()">
+        Logout
+    </button>
+
+</div>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+<div class="background"></div>
+
+<div class="main" id="main" style="display:block;">
+
+<h1 class="title">Complaint Issues</h1>
+
+<div class="issues">
+
+    <div class="card">
+        <img src="images/issues1.jpg" alt="Internet Problem">
+        <h2>Internet Problem</h2>
+        <button onclick="selectissue('Internet Problem')">
+            Select
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="images/issues2.jpg" alt="Water Problem">
+        <h2>Water Problem</h2>
+        <button onclick="selectissue('Water Problem')">
+            Select
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="images/issues3.jpg" alt="Class Room">
+        <h2>Class Room</h2>
+        <button onclick="selectissue('Class Room')">
+            Select
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="images/issues4.jpg" alt="Staff Problem">
+        <h2>Staff Problem</h2>
+        <button onclick="selectissue('Staff Problem')">
+            Select
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="images/issues5.jpg" alt="Washrooms">
+        <h2>Washrooms</h2>
+        <button onclick="selectissue('Washrooms')">
+            Select
+        </button>
+    </div>
+
+    <div class="card">
+        <img src="images/issues6.jpg" alt="Canteen">
+        <h2>Canteen</h2>
+        <button onclick="selectissue('Canteen')">
+            Select
+        </button>
+    </div>
+
+</div>
+
+<div id="complaintForm">
+
+    <h2>Submit Complaint</h2>
+
+    <input
+        type="text"
+        id="complaintTitle"
+        placeholder="Complaint Title">
+
+    <textarea
+        id="complaintDescription"
+        placeholder="Describe Issue"></textarea>
+
+    <button onclick="submitComplaint()">
+        Submit Complaint
+    </button>
+
+</div>
+
+<h2>My Complaints</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Issue</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody id="complaintList"></tbody>
+</table>
+
+<h2 style="margin-top:30px;">
+    Notifications
+</h2>
+
+<ul id="notificationList"></ul>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+loadComplaints();
+</script>
+
+</body>
+</html>

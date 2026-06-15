@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "username": "karthik123",
+      "password": "karthik123",
+      "id": "5kxeKIxtghk"
+    },
+    {
+      "username": "varma143",
+      "password": "varma143",
+      "id": "xeNLl-O97f8"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123"
+    }
+  ],
+  "complaints": [
+    {
+      "username": "karthik123",
+      "title": "Washrooms",
+      "description": "not clean",
+      "status": "Resolved",
+      "id": "TxfIAYYMK9w"
+    },
+    {
+      "username": "karthik123",
+      "title": "Class Room",
+      "description": "not clean",
+      "status": "Pending",
+      "id": "N2qNcEFjIQ0"
+    },
+    {
+      "username": "karthik123",
+      "title": "Canteen",
+      "description": "qulity",
+      "status": "In Progress",
+      "id": "SaS-ixT6w5M"
+    }
+  ],
+  "notifications": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
