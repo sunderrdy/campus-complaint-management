@@ -250,18 +250,13 @@ async function adminLogin() {
     let password =
     document.getElementById("adminPass").value.trim();
 
-    console.log("Entered Username:", username);
-    console.log("Entered Password:", password);
-
     const response =
     await fetch(
     "https://campus-backend-qpso.onrender.com/admins"
-     );
+    );
 
     const admins =
     await response.json();
-
-    console.log("Admins from JSON:", admins);
 
     const admin =
     admins.find(a =>
@@ -269,11 +264,12 @@ async function adminLogin() {
         a.password === password
     );
 
-    console.log("Matched Admin:", admin);
-
     if(admin){
 
-        alert("Admin Login Successful");
+        localStorage.setItem(
+        "adminRole",
+        admin.role
+        );
 
         window.location.href =
         "admin.html";
@@ -283,13 +279,6 @@ async function adminLogin() {
         alert("Invalid Admin Login");
 
     }
-}
-
-if(admin){
-
-    localStorage.setItem("adminRole", admin.role);
-
-    window.location.href = "admin.html";
 }
 
 /* ---------------- ADMIN DASHBOARD ---------------- */
@@ -457,17 +446,15 @@ dashboardStats();
 
 loadAdminComplaints();
 
-window.onload = function () {
-
-    loadComplaints();
+window.onload = function(){
 
     loadAdminComplaints();
 
-    loadNotifications();
-
     dashboardStats();
 
-};
+    showAdminRole();
+
+}
 
 function logout() {
 
@@ -649,5 +636,23 @@ async function loadNotifications(){
     ).innerHTML = html;
 }
 
-document.getElementById("adminRole").innerHTML =
-"Role: " + localStorage.getItem("adminRole");
+function showAdminRole(){
+
+    let role =
+    localStorage.getItem(
+        "adminRole"
+    );
+
+    if(
+        document.getElementById(
+        "adminRole"
+        )
+    ){
+
+        document.getElementById(
+        "adminRole"
+        ).innerHTML =
+        "Role: " + role;
+
+    }
+} 
