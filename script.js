@@ -1,4 +1,3 @@
-
 let selectedIssue = "";
 
 /* ---------------- LOGIN ---------------- */
@@ -457,16 +456,6 @@ dashboardStats();
 
 loadAdminComplaints();
 
-window.onload = function(){
-
-    loadAdminComplaints();
-
-    dashboardStats();
-
-    showAdminRole();
-
-}
-
 function logout() {
 
     localStorage.removeItem(
@@ -479,13 +468,22 @@ function logout() {
 
 window.onload = function(){
 
-    loadAdminComplaints();
+    if(document.getElementById("adminComplaints")){
+        loadAdminComplaints();
+        dashboardStats();
+    }
 
-    dashboardStats();
+    if(document.getElementById("welcomeAdmin")){
+        showAdminInfo();
+    }
 
-    showAdminInfo();
+    if(document.getElementById("complaintList")){
+        loadComplaints();
+    }
 
-}
+    if(document.getElementById("notificationList")){
+        loadNotifications();
+    }
 
 }
 
