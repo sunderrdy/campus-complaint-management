@@ -258,30 +258,32 @@ async function adminLogin() {
     const admins =
     await response.json();
 
+    console.log("Admins:", admins);
+
     const admin =
     admins.find(a =>
         a.username === username &&
         a.password === password
     );
 
+    console.log("Matched:", admin);
+
     if(admin){
 
-    localStorage.setItem(
+        localStorage.setItem(
         "adminUser",
         admin.username
-    );
+        );
 
-    localStorage.setItem(
+        localStorage.setItem(
         "adminRole",
         admin.role
-    );
+        );
 
-    alert("Admin Login Successful");
+        alert("Admin Login Successful");
 
-    window.location.href =
-    "admin.html";
-
-}
+        window.location.href =
+        "admin.html";
 
     }else{
 
