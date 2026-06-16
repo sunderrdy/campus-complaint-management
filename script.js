@@ -266,13 +266,22 @@ async function adminLogin() {
 
     if(admin){
 
-        localStorage.setItem(
+    localStorage.setItem(
+        "adminUser",
+        admin.username
+    );
+
+    localStorage.setItem(
         "adminRole",
         admin.role
-        );
+    );
 
-        window.location.href =
-        "admin.html";
+    alert("Admin Login Successful");
+
+    window.location.href =
+    "admin.html";
+
+}
 
     }else{
 
@@ -468,15 +477,13 @@ function logout() {
 
 window.onload = function(){
 
-    if(
-    document.getElementById(
-    "adminComplaints"
-    )
-    ){
+    loadAdminComplaints();
 
-        loadAdminComplaints();
+    dashboardStats();
 
-    }
+    showAdminInfo();
+
+}
 
 }
 
@@ -656,3 +663,32 @@ function showAdminRole(){
 
     }
 } 
+
+function showAdminInfo(){
+
+    let user =
+    localStorage.getItem(
+    "adminUser"
+    );
+
+    let role =
+    localStorage.getItem(
+    "adminRole"
+    );
+
+    if(
+    document.getElementById(
+    "welcomeAdmin"
+    )
+    ){
+
+        document.getElementById(
+        "welcomeAdmin"
+        ).innerHTML =
+        "Welcome " +
+        user +
+        " (" +
+        role +
+        ")";
+    }
+}
