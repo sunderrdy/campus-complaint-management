@@ -12,11 +12,24 @@
     }
   ],
   "admins": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "admin123"
-    }
+  {
+    "id":"1",
+    "username":"admin",
+    "password":"admin123",
+    "role":"Super Admin"
+  },
+  {
+    "id":"2",
+    "username":"hod",
+    "password":"hod123",
+    "role":"HOD"
+  },
+  {
+    "id":"3",
+    "username":"principal",
+    "password":"principal123",
+    "role":"Principal"
+  }
   ],
   "complaints": [
     {
@@ -43,4 +56,4 @@
   ],
   "notifications": [],
   "$schema": "./node_modules/json-server/schema.json"
-}
+} 

@@ -285,6 +285,13 @@ async function adminLogin() {
     }
 }
 
+if(admin){
+
+    localStorage.setItem("adminRole", admin.role);
+
+    window.location.href = "admin.html";
+}
+
 /* ---------------- ADMIN DASHBOARD ---------------- */
 
 async function loadAdminComplaints() {
@@ -641,3 +648,6 @@ async function loadNotifications(){
     "notificationList"
     ).innerHTML = html;
 }
+
+document.getElementById("adminRole").innerHTML =
+"Role: " + localStorage.getItem("adminRole");
